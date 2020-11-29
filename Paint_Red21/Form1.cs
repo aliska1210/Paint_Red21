@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Paint_Red21.Figures;
 
 namespace Paint_Red21
 {
@@ -18,6 +13,8 @@ namespace Paint_Red21
         Pen pen;
         Point point;
         string mod = "";
+        PencilFigure figure = new PencilFigure();
+        NAngleFigure figureNAngle = new NAngleFigure();
         public Red_21()
         {
             InitializeComponent();
@@ -36,11 +33,14 @@ namespace Paint_Red21
         {
             if((e.Button == MouseButtons.Left) && (mod == "pencil"))
             {
-
+                FigureResult result = figure.Draw(mainBitmap, tmpBitmap, graphics, point, pen, e);
+                paintSurface.Image = result.Image;
+                point = result.Location;
             }
             if ((e.Button == MouseButtons.Left) && (mod == "NAngle"))
             {
-
+                FigureResult resultNAngle = figureNAngle.Draw(mainBitmap, tmpBitmap, graphics, point, pen, e);
+                paintSurface.Image = resultNAngle.Image;
             }
         }
 
