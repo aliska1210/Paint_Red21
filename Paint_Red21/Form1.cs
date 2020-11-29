@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Paint_Red21
 {
-    public partial class Form1 : Form
+    public partial class Red_21 : Form
     {
-        public Form1()
+        public Red_21()
         {
             InitializeComponent();
         }
