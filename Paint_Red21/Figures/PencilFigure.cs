@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Paint_Red21.Figures
 {
-    public class PencilFigures : IFigures
+    public class PencilFigure : IFigures
     {
         public FigureResult Draw(Bitmap mainBitmap, Bitmap tmpBitmap, Graphics graphics, Point point, Pen pen, MouseEventArgs e)
         {
